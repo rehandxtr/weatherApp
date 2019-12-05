@@ -1,0 +1,44 @@
+input[type="text"] ,button{
+  border:1px solid black;
+  color: black;
+  padding: 8px 12px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+}
+button {
+ background-color: cornflowerblue;
+      margin: 4px 2px;
+  cursor: pointer;
+}
+.backQuery{
+    background-color: rgb(128, 159, 255,0.5);
+    padding: 1px 0 30px;
+    border-bottom-color: black;
+      border-style: solid;
+      border-top-style: none;
+   border-left-style:none;
+    border-right-style:none;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+}
+img{
+    margin: -25px;
+}
+h1{
+    text-decoration: underline;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url("image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

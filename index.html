@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <link rel="stylesheet" href="resource/styles.css" />
+    </head>
+    <body>
+        <center>
+            <div class="backQuery">
+                <h1>Weather App</h1>
+                <input placeholder="Enter City Name " type="text" id="city" />
+                <br /><br /><lable>Unit :</lable
+                ><input
+                    type="radio"
+                    name="unit"
+                    value="default"
+                    checked
+                />Default
+                <input type="radio" name="unit" value="metric" />Metric
+                <input type="radio" name="unit" value="imperial" />
+                Imperial<br /><br />
+                <button id="weather">Get Weather</button>
+            </div>
+            <div id="result"></div>
+        </center>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="resource/script.js"></script>
+    </body>
+</html>
