@@ -20,6 +20,7 @@ function getData(){
        }
         catch{
     alert("NOt Found");
+        document.getElementById("city").innerHTML="";
     }
     })
     
