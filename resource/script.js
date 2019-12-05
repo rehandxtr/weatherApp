@@ -16,7 +16,7 @@ $(document).ready(function() {
                     "&APPID=784970cd25d49bd7c2e4f9c019631272",
                 type: "GET",
                 dataType: "jsonp",
-                statusCode: {
+             /*   statusCode: {
                     404: function() {
                         $("#city").val("");
                         alert("City Not Found.");
@@ -25,7 +25,7 @@ $(document).ready(function() {
                         $("#city").val("");
                         alert("Error: 500: Server error occurred.");
                     }
-                },
+                },*/
                 success: function(data) {
                     if (radioValue == "default") {
                         var widget = show(data, defa);
