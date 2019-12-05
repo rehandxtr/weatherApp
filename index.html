@@ -14,13 +14,13 @@
                 ><input
                     type="radio"
                     name="unit"
-                    value="default"
+                    value="default" id="unit"
                     checked
                 />Default
-                <input type="radio" name="unit" value="metric" />Metric
-                <input type="radio" name="unit" value="imperial" />
+                <input type="radio" name="unit" id="unit" value="metric" />Metric
+                <input type="radio" name="unit" id="unit" value="imperial" />
                 Imperial<br /><br />
-                <button id="weather">Get Weather</button>
+                <button id="weather" onclick="getData()">Get Weather</button>
             </div>
             <div id="result"></div>
         </center>
