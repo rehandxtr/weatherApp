@@ -3,19 +3,19 @@ var metric = ["meter/sec", "Celcius"];
 var imperial = ["miles/hour", "Fahrenheit"];
 function getData() {
     var city = document.getElementById("city").value;
-var unitValue = document.getElementsByName('unit');
-var checkValue=""
-for (var i = 0, length = unitValue.length; i < length; i++) {
-    if (unitValue[i].checked) {
-         checkValue=unitValue[i].value;
-        break;
+    var unitValue = document.getElementsByName("unit");
+    var checkValue = "";
+    for (var i = 0, length = unitValue.length; i < length; i++) {
+        if (unitValue[i].checked) {
+            checkValue = unitValue[i].value;
+            break;
+        }
     }
-}   
     var url =
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
         "&units=" +
-        unitValue +
+        checkValue +
         "&APPID=784970cd25d49bd7c2e4f9c019631272";
     fetch(url)
         .then(result => result.json())
