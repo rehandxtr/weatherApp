@@ -42,7 +42,7 @@ function show(data, unit) {
         "<h1>Weather of " +
         data.name +
         "</h1>" +
-        "<h3><strong>Description : </strong>" +
+        "<h3><strong>Weather Type : </strong>" +
         data.weather[0].description +
         "</h3>" +
         "<img src=http://openweathermap.org/img/w/" +
