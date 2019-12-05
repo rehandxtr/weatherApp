@@ -3,28 +3,28 @@ var metric = ["meter/sec", "Celcius"];
 var imperial = ["miles/hour", "Fahrenheit"];
 function getData() {
     var city = document.getElementById("city").value;
-    var radioValue = document.getElementById("unit").value;
+    var unitValue = document.getElementById("unit").value;
     var url =
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
         "&units=" +
-        radioValue +
+        unitValue +
         "&APPID=784970cd25d49bd7c2e4f9c019631272";
     fetch(url)
         .then(result => result.json())
         .then(data => {
             try {
-                if (radioValue == "default") {
+                if (unitValue == "default") {
                     var widget = show(data, defa);
-                } else if (radioValue == "metric") {
+                } else if (unitValue == "metric") {
                     var widget = show(data, metric);
-                } else if (radioValue == "imperial") {
+                } else if (unitValue == "imperial") {
                     var widget = show(data, imperial);
                 }
                 document.getElementById("result").innerHTML = widget;
                 document.getElementById("city").value = "";
             } catch {
-                alert("NOt Found");
+                alert("City Not Found");
                 document.getElementById("city").value = "";
             }
         });
