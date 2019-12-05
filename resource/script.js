@@ -22,10 +22,10 @@ function getData() {
                     var widget = show(data, imperial);
                 }
                 document.getElementById("result").innerHTML = widget;
-                document.getElementById("city").innerHTML = "";
+                document.getElementById("city").value = "";
             } catch {
                 alert("NOt Found");
-                document.getElementById("city").innerHTML = "";
+                document.getElementById("city").value = "";
             }
         });
 }
