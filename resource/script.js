@@ -1,34 +1,49 @@
 var defa = ["meter/sec", "Kelvin"];
 var metric = ["meter/sec", "Celcius"];
 var imperial = ["miles/hour", "Fahrenheit"];
-function getData() {
-    var city = document.getElementById("city").value;
-    var radioValue = document.getElementById("unit").value;
-    var url =
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-        city +
-        "&units=" +
-        radioValue +
-        "&APPID=784970cd25d49bd7c2e4f9c019631272";
-    fetch(url)
-        .then(result => result.json())
-        .then(data => {
-            try {
-                if (radioValue == "default") {
-                    var widget = show(data, defa);
-                } else if (radioValue == "metric") {
-                    var widget = show(data, metric);
-                } else if (radioValue == "imperial") {
-                    var widget = show(data, imperial);
+$(document).ready(function() {
+    $("#weather").click(function() {
+        var city = $("#city").val();
+        var radioValue = $("input[name='unit']:checked").val();
+
+        if (city != "") {
+            $.ajax({
+                url:
+                    "https://api.openweathermap.org/data/2.5/weather?q=" +
+                    city +
+                    "&units=" +
+                    radioValue +
+                    "&APPID=784970cd25d49bd7c2e4f9c019631272",
+                type: "GET",
+                dataType: "jsonp",
+                statusCode: {
+                    404: function() {
+                        $("#city").val("");
+                        alert("City Not Found.");
+                    },
+                    500: function() {
+                        $("#city").val("");
+                        alert("Error: 500: Server error occurred.");
+                    }
+                },
+                success: function(data) {
+                    if (radioValue == "default") {
+                        var widget = show(data, defa);
+                    } else if (radioValue == "metric") {
+                        var widget = show(data, metric);
+                    } else if (radioValue == "imperial") {
+                        var widget = show(data, imperial);
+                    }
+
+                    $("#result").html(widget);
+                    $("#city").val("");
                 }
-                document.getElementById("result").innerHTML = widget;
-                document.getElementById("city").value = "";
-            } catch {
-                alert("NOt Found");
-                document.getElementById("city").value = "";
-            }
-        });
-}
+            });
+        } else {
+            alert("areeee");
+        }
+    });
+});
 
 function show(data, unit) {
     return (
