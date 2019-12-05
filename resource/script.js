@@ -3,7 +3,14 @@ var metric = ["meter/sec", "Celcius"];
 var imperial = ["miles/hour", "Fahrenheit"];
 function getData() {
     var city = document.getElementById("city").value;
-    var unitValue = document.getElementById("unit").value;
+var unitValue = document.getElementsByName('unit');
+var checkValue=""
+for (var i = 0, length = unitValue.length; i < length; i++) {
+    if (unitValue[i].checked) {
+         checkValue=unitValue[i].value;
+        break;
+    }
+}   
     var url =
         "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
@@ -14,11 +21,11 @@ function getData() {
         .then(result => result.json())
         .then(data => {
             try {
-                if (unitValue == "default") {
+                if (checkValue === "default") {
                     var widget = show(data, defa);
-                } else if (unitValue == "metric") {
+                } else if (checkValue === "metric") {
                     var widget = show(data, metric);
-                } else if (unitValue == "imperial") {
+                } else if (checkValue === "imperial") {
                     var widget = show(data, imperial);
                 }
                 document.getElementById("result").innerHTML = widget;
