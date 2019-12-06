@@ -42,3 +42,6 @@ body::before {
     background-repeat: no-repeat;
     background-position: center;
 }
+.center{
+    text-align: center;
+}
