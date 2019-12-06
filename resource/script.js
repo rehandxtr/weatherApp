@@ -30,9 +30,11 @@ function getData() {
                 }
                 document.getElementById("result").innerHTML = widget;
                 document.getElementById("city").value = "";
+                document.getElementById("error").innerHTML = "";
             } catch {
-                alert("City Not Found");
+                 document.getElementById("error").innerHTML="City "+city+" not found";
                 document.getElementById("city").value = "";
+        document.getElementById("result").innerHTML ="";
             }
         });
 }

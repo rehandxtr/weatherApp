@@ -6,30 +6,53 @@
         <link rel="stylesheet" href="resource/styles.css" />
     </head>
     <body>
-        <div class="center">
-            <div class="backQuery">
-                <h1>Weather App</h1>
-                <input placeholder="Enter City Name " type="text" id="city" />
-                <br /><br /><lable>Unit :</lable
-                ><input
-                    type="radio"
-                    name="unit"
-                    value="default"
-                    id="unit"
-                    checked
-                    
-                />Default
-                <input
-                    type="radio"
-                    name="unit"
-                    id="unit"
-                    value="metric"
-                />Metric
-                <input type="radio" name="unit" id="unit" value="imperial" />
-                Imperial<br /><br />
-                <button id="weather" onclick="getData()">Get Weather</button>
+        <div class="page-container">
+            <div class="center content-wrap">
+                <div class="backQuery">
+                    <header><h1>Weather App</h1></header>
+                    <input
+                        placeholder="Enter City Name "
+                        type="text"
+                        id="city"
+                    />
+                    <br /><br /><lable>Unit :</lable
+                    ><input
+                        type="radio"
+                        name="unit"
+                        value="default"
+                        id="unit"
+                        checked
+                    />Default
+                    <input
+                        type="radio"
+                        name="unit"
+                        id="unit"
+                        value="metric"
+                    />Metric
+                    <input
+                        type="radio"
+                        name="unit"
+                        id="unit"
+                        value="imperial"
+                    />
+                    Imperial<br /><br />
+                    <button id="weather" onclick="getData()">
+                        Get Weather
+                    </button>
+                </div>
+                <span id="error" class="error"></span>
+                <div id="result"></div>
             </div>
-            <div id="result"></div>
+            <footer class="footer">
+                Weather API© | Designed by:
+                <a
+                    href=" https://www.linkedin.com/in/uiet-rehan/ "
+                    target="_blank"
+                    class="customize-unpreviewable"
+                >
+                    @rehandxtr</a
+                >
+            </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="resource/script.js"></script>
